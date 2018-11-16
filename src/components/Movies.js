@@ -1,10 +1,25 @@
-import React from 'react';
-import { movies } from '../data';
+import React, { Fragment } from "react";
+import { movies } from "../data.js";
 
 const Movies = () => {
   return (
     <div>
-        {/*{code here}*/}
+      <h1>Movies Page</h1>
+
+      {movies.map(movie => {
+        return (
+          <div>
+            <h2>Name: {movie.title}</h2>
+            <p>Time: {movie.time}</p>
+            <p>Genres:</p>
+            <ul>
+              {movie.genres.map(genre => {
+                return <li>{genre}</li>;
+              })}
+            </ul>
+          </div>
+        );
+      })}
     </div>
   );
 };
